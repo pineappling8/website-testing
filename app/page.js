@@ -51,7 +51,7 @@ export default function Home() {
           <input type="email" id="email" name="email" required />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="question1">What&apos;s your favorite programming language?</label>
+          <label htmlFor="question1">What&apos;s your favorite programming language?</label>          
           <input type="text" id="question1" name="question1" required />
         </div>
         <div className={styles.formGroup}>
@@ -65,3 +65,7 @@ export default function Home() {
         <button type="submit">Submit</button>
       </form>
       {status === 'success' && <p className={styles.success}>Thank you for your response!</p>}
+      {status === 'error' && <p className={styles.error}>There was an error submitting your response. Please try again.</p>}
+    </main>
+  );
+}
