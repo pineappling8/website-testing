@@ -29,6 +29,10 @@ export default function Home() {
       if (response.ok) {
         setStatus('success');
         event.target.reset();
+        // Show success message briefly before redirect
+        setTimeout(() => {
+          window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        }, 1000); // Waits 1 second before redirecting
       } else {
         setStatus('error');
       }
@@ -51,7 +55,7 @@ export default function Home() {
           <input type="email" id="email" name="email" required />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="question1">What&apos;s your favorite programming language?</label>          
+          <label htmlFor="question1">What&apos;s your favorite programming language?</label>
           <input type="text" id="question1" name="question1" required />
         </div>
         <div className={styles.formGroup}>
