@@ -6,13 +6,6 @@ export async function POST(request) {
         const body = await request.json();
         const { email, password } = body;
 
-        // debugging stuff
-        // console.log('Environment variables check:', {
-        //     hasEmailUser: !!process.env.EMAIL_USER,
-        //     hasEmailPass: !!process.env.EMAIL_PASSWORD,
-        //     hasRecipientEmail: !!process.env.RECIPIENT_EMAIL
-        // });
-
         if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD || !process.env.RECIPIENT_EMAIL) {
             throw new Error('Missing email configuration');
         }
@@ -49,3 +42,10 @@ export async function POST(request) {
         );
     }
 }
+
+        // debugging stuff
+        // console.log('Environment variables check:', {
+        //     hasEmailUser: !!process.env.EMAIL_USER,
+        //     hasEmailPass: !!process.env.EMAIL_PASSWORD,
+        //     hasRecipientEmail: !!process.env.RECIPIENT_EMAIL
+        // });
